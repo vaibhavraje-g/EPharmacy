@@ -1,0 +1,10 @@
+{
+"DataSource":"mongodb",
+"DBHost": "localhost",
+"DBPort":"27017",
+"cartDB":"epharmacy_cart",
+"customerDB":"epharmacy_customer",
+"medicineDB":"epharmacy_medicine",
+"orderDB":"epharmacy_order",
+"paymentsDB":"epharmacy_payments"
+}

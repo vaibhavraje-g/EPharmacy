@@ -1,0 +1,127 @@
+{
+  "customers": [
+    {
+      "customerId": 100,
+      "customerName": "John Doe",
+      "customerEmailId": "johndoe@example.com",
+      "contactNumber": "9876543210",
+      "password": "$2a$10$01LDvtc5psua7AGCYdqAs.uaDohe7lHh1NADLNRSRrehQgAL.C75O",
+      "gender": "Male",
+      "dateOfBirth": "1985-06-15",
+      "addressList": [
+        {
+          "addressName": "Home",
+          "addressLine1": "123 Elm Street",
+          "addressLine2": "Apartment 5B",
+          "area": "Greenwood",
+          "city": "Dallas",
+          "state": "Texas",
+          "pincode": "75001"
+        },
+        {
+          "addressName": "Office",
+          "addressLine1": "456 Oak Street",
+          "addressLine2": "Suite 10A",
+          "area": "Downtown",
+          "city": "Dallas",
+          "state": "Texas",
+          "pincode": "75002"
+        },
+        {
+          "addressName": "Vacation Home",
+          "addressLine1": "789 Pine Street",
+          "addressLine2": "Cabin 3",
+          "area": "Lakeside",
+          "city": "Austin",
+          "state": "Texas",
+          "pincode": "73301"
+        }
+      ],
+      "healthCoins": 0
+    },
+    {
+      "customerId": 101,
+      "customerName": "Alice Johnson",
+      "customerEmailId": "alice.johnson@example.com",
+      "contactNumber": "9876543210",
+      "password": "$2a$10$01LDvtc5psua7AGCYdqAs.uaDohe7lHh1NADLNRSRrehQgAL.C75O",
+      "gender": "Female",
+      "dateOfBirth": "1990-03-25",
+      "addressList": [
+        {
+          "addressName": "Home",
+          "addressLine1": "456 Oak Street",
+          "addressLine2": "Unit 10A",
+          "area": "Hilltop",
+          "city": "New York",
+          "state": "New York",
+          "pincode": "10001"
+        }
+      ],
+      "healthCoins": 0
+    },
+    {
+      "customerId": 102,
+      "customerName": "Michael Johnson",
+      "customerEmailId": "michaelj@example.com",
+      "contactNumber": "7654321098",
+      "password": "$2a$10$01LDvtc5psua7AGCYdqAs.uaDohe7lHh1NADLNRSRrehQgAL.C75O",
+      "gender": "Male",
+      "dateOfBirth": "1980-11-30",
+      "addressList": [
+        {
+          "addressName": "Home",
+          "addressLine1": "789 Maple Road",
+          "addressLine2": "Unit 12C",
+          "area": "Bayside",
+          "city": "Miami",
+          "state": "Florida",
+          "pincode": "33101"
+        }
+      ],
+      "healthCoins": 0
+    },
+    {
+      "customerId": 103,
+      "customerName": "Emily Davis",
+      "customerEmailId": "emilydavis@example.com",
+      "contactNumber": "6543210987",
+      "password": "$2a$10$01LDvtc5psua7AGCYdqAs.uaDohe7lHh1NADLNRSRrehQgAL.C75O",
+      "gender": "Female",
+      "dateOfBirth": "1995-07-14",
+      "addressList": [
+        {
+          "addressName": "Home",
+          "addressLine1": "101 Pine Lane",
+          "addressLine2": "Floor 2",
+          "area": "Suburbia",
+          "city": "Los Angeles",
+          "state": "California",
+          "pincode": "90001"
+        }
+      ],
+      "healthCoins": 0
+    },
+    {
+      "customerId": 104,
+      "customerName": "David Smith",
+      "customerEmailId": "david.smith@example.com",
+      "contactNumber": "6723409876",
+      "password": "$2a$10$01LDvtc5psua7AGCYdqAs.uaDohe7lHh1NADLNRSRrehQgAL.C75O",
+      "gender": "Male",
+      "dateOfBirth": "1989-04-22",
+      "addressList": [
+        {
+          "addressName": "Home",
+          "addressLine1": "200 Birch Avenue",
+          "addressLine2": "Suite 6B",
+          "area": "Green Valley",
+          "city": "Chicago",
+          "state": "Illinois",
+          "pincode": "60601"
+        }
+      ],
+      "healthCoins": 0
+    }
+  ]
+}

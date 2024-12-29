@@ -1,0 +1,70 @@
+{
+    "carts": [
+      {
+        "customer": { "customerId": 100 },
+        "cartItems": [
+          { "medicineId": 1, "medicineName": "Paracetamol", "quantity": 2 },
+          { "medicineId": 2, "medicineName": "Amoxicillin", "quantity": 1 }
+        ]
+      },
+      {
+        "customer": { "customerId": 101 },
+        "cartItems": [
+          { "medicineId": 3, "medicineName": "Ibuprofen", "quantity": 3 },
+          { "medicineId": 4, "medicineName": "Aspirin", "quantity": 5 }
+        ]
+      },
+      {
+        "customer": { "customerId": 102 },
+        "cartItems": [
+          { "medicineId": 5, "medicineName": "Cetirizine", "quantity": 1 },
+          { "medicineId": 6, "medicineName": "Metformin", "quantity": 4 }
+        ]
+      },
+      {
+        "customer": { "customerId": 103 },
+        "cartItems": [
+          { "medicineId": 7, "medicineName": "Azithromycin", "quantity": 2 },
+          { "medicineId": 8, "medicineName": "Doxycycline", "quantity": 1 }
+        ]
+      },
+      {
+        "customer": { "customerId": 104 },
+        "cartItems": [
+          { "medicineId": 9, "medicineName": "Clarithromycin", "quantity": 6 }
+        ]
+      },
+      {
+        "customer": { "customerId": 105 },
+        "cartItems": [
+          { "medicineId": 10, "medicineName": "Hydroxychloroquine", "quantity": 1 }
+        ]
+      },
+      {
+        "customer": { "customerId": 106 },
+        "cartItems": [
+          { "medicineId": 11, "medicineName": "Amphotericin B", "quantity": 2 },
+          { "medicineId": 12, "medicineName": "Ciprofloxacin", "quantity": 3 }
+        ]
+      },
+      {
+        "customer": { "customerId": 107 },
+        "cartItems": [
+          { "medicineId": 13, "medicineName": "Fluconazole", "quantity": 1 }
+        ]
+      },
+      {
+        "customer": { "customerId": 108 },
+        "cartItems": [
+          { "medicineId": 14, "medicineName": "Zidovudine", "quantity": 2 }
+        ]
+      },
+      {
+        "customer": { "customerId": 109 },
+        "cartItems": [
+          { "medicineId": 15, "medicineName": "Lopinavir", "quantity": 5 }
+        ]
+      }
+    ]
+  }
+  
