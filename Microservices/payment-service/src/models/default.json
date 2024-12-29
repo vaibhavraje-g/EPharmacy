@@ -1,0 +1,206 @@
+{
+  "cards": [
+    {
+      "cardId": "4111-1111-1111-1111",
+      "nameOnCard": "Alice Johnson",
+      "cardType": "CREDIT",
+      "cvv": "123",
+      "expiryDate": "2025-12-01",
+      "customerId": 101
+    },
+    {
+      "cardId": "5500-0000-0000-0004",
+      "nameOnCard": "Bob Smith",
+      "cardType": "DEBIT",
+      "cvv": "234",
+      "expiryDate": "2026-01-01",
+      "customerId": 102
+    },
+    {
+      "cardId": "3400-0000-0000-009",
+      "nameOnCard": "Charlie Brown",
+      "cardType": "CREDIT",
+      "cvv": "345",
+      "expiryDate": "2025-08-15",
+      "customerId": 103
+    },
+    {
+      "cardId": "6011-0000-0000-0004",
+      "nameOnCard": "Daisy White",
+      "cardType": "CREDIT",
+      "cvv": "456",
+      "expiryDate": "2024-03-30",
+      "customerId": 104
+    },
+    {
+      "cardId": "4000-0000-0000-0069",
+      "nameOnCard": "Evan Green",
+      "cardType": "DEBIT",
+      "cvv": "567",
+      "expiryDate": "2026-05-15",
+      "customerId": 105
+    },
+    {
+      "cardId": "4111-1111-1111-1112",
+      "nameOnCard": "Fiona Blue",
+      "cardType": "DEBIT",
+      "cvv": "678",
+      "expiryDate": "2025-11-10",
+      "customerId": 106
+    },
+    {
+      "cardId": "5500-0000-0000-0005",
+      "nameOnCard": "George Black",
+      "cardType": "CREDIT",
+      "cvv": "789",
+      "expiryDate": "2027-02-20",
+      "customerId": 107
+    },
+    {
+      "cardId": "3400-0000-0000-010",
+      "nameOnCard": "Hannah Gold",
+      "cardType": "DEBIT",
+      "cvv": "890",
+      "expiryDate": "2025-06-12",
+      "customerId": 108
+    },
+    {
+      "cardId": "6011-0000-0000-0005",
+      "nameOnCard": "Ian Silver",
+      "cardType": "CREDIT",
+      "cvv": "901",
+      "expiryDate": "2024-12-31",
+      "customerId": 109
+    },
+    {
+      "cardId": "4000-0000-0000-0070",
+      "nameOnCard": "Jack Violet",
+      "cardType": "DEBIT",
+      "cvv": "012",
+      "expiryDate": "2026-08-15",
+      "customerId": 110
+    }
+  ],
+  "payments": [
+    {
+      "orderValueAfterDiscount": 120.5,
+      "customer": { "customerId": 101 },
+      "card": {
+        "cardId": "4111-1111-1111-1111",
+        "nameOnCard": "Alice Johnson",
+        "cardType": "CREDIT",
+        "cvv": "123",
+        "expiryDate": "2025-12-01"
+      },
+      "paymentStatus": "Completed"
+    },
+    {
+      "orderValueAfterDiscount": 75.0,
+      "customer": { "customerId": 102 },
+      "card": {
+        "cardId": "5500-0000-0000-0004",
+        "nameOnCard": "Bob Smith",
+        "cardType": "DEBIT",
+        "cvv": "234",
+        "expiryDate": "2026-01-01"
+      },
+      "paymentStatus": "Pending"
+    },
+    {
+      "orderValueAfterDiscount": 50.75,
+      "customer": { "customerId": 103 },
+      "card": {
+        "cardId": "3400-0000-0000-009",
+        "nameOnCard": "Charlie Brown",
+        "cardType": "CREDIT",
+        "cvv": "345",
+        "expiryDate": "2025-08-15"
+      },
+      "paymentStatus": "Failed"
+    },
+    {
+      "orderValueAfterDiscount": 100.0,
+      "customer": { "customerId": 104 },
+      "card": {
+        "cardId": "6011-0000-0000-0004",
+        "nameOnCard": "Daisy White",
+        "cardType": "CREDIT",
+        "cvv": "456",
+        "expiryDate": "2024-03-30"
+      },
+      "paymentStatus": "Completed"
+    },
+    {
+      "orderValueAfterDiscount": 200.0,
+      "customer": { "customerId": 105 },
+      "card": {
+        "cardId": "4000-0000-0000-0069",
+        "nameOnCard": "Evan Green",
+        "cardType": "DEBIT",
+        "cvv": "567",
+        "expiryDate": "2026-05-15"
+      },
+      "paymentStatus": "Pending"
+    },
+    {
+      "orderValueAfterDiscount": 150.0,
+      "customer": { "customerId": 106 },
+      "card": {
+        "cardId": "4111-1111-1111-1112",
+        "nameOnCard": "Fiona Blue",
+        "cardType": "DEBIT",
+        "cvv": "678",
+        "expiryDate": "2025-11-10"
+      },
+      "paymentStatus": "Completed"
+    },
+    {
+      "orderValueAfterDiscount": 175.25,
+      "customer": { "customerId": 107 },
+      "card": {
+        "cardId": "5500-0000-0000-0005",
+        "nameOnCard": "George Black",
+        "cardType": "CREDIT",
+        "cvv": "789",
+        "expiryDate": "2027-02-20"
+      },
+      "paymentStatus": "Failed"
+    },
+    {
+      "orderValueAfterDiscount": 250.0,
+      "customer": { "customerId": 108 },
+      "card": {
+        "cardId": "3400-0000-0000-010",
+        "nameOnCard": "Hannah Gold",
+        "cardType": "DEBIT",
+        "cvv": "890",
+        "expiryDate": "2025-06-12"
+      },
+      "paymentStatus": "Pending"
+    },
+    {
+      "orderValueAfterDiscount": 99.99,
+      "customer": { "customerId": 109 },
+      "card": {
+        "cardId": "6011-0000-0000-0005",
+        "nameOnCard": "Ian Silver",
+        "cardType": "CREDIT",
+        "cvv": "901",
+        "expiryDate": "2024-12-31"
+      },
+      "paymentStatus": "Completed"
+    },
+    {
+      "orderValueAfterDiscount": 89.99,
+      "customer": { "customerId": 110 },
+      "card": {
+        "cardId": "4000-0000-0000-0070",
+        "nameOnCard": "Jack Violet",
+        "cardType": "DEBIT",
+        "cvv": "012",
+        "expiryDate": "2026-08-15"
+      },
+      "paymentStatus": "Pending"
+    }
+  ]
+}

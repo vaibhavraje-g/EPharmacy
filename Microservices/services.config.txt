@@ -7,4 +7,5 @@
 "medicineDB":"epharmacy_medicine",
 "orderDB":"epharmacy_order",
 "paymentsDB":"epharmacy_payments"
+
 }
