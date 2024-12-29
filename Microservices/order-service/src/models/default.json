@@ -1,0 +1,154 @@
+{
+  "orders": [
+    {
+      "orderId": 1,
+      "orderValueBeforeDiscount": 100.5,
+      "customer": {
+        "customerId": 1
+      },
+      "deliveryAddress": {
+        "addressId": "101"
+      },
+      "card": {
+        "cardId": "1234-5678-9012-3456",
+        "cvv": "123",
+        "customerId": 1
+      }
+    },
+    {
+      "orderId": 2,
+      "orderValueBeforeDiscount": 200.75,
+      "customer": {
+        "customerId": 2
+      },
+      "deliveryAddress": {
+        "addressId": "102"
+      },
+      "card": {
+        "cardId": "2345-6789-0123-4567",
+        "cvv": "456",
+        "customerId": 2
+      }
+    },
+    {
+      "orderId": 3,
+      "orderValueBeforeDiscount": 150.0,
+      "customer": {
+        "customerId": 3
+      },
+      "deliveryAddress": {
+        "addressId": "103"
+      },
+      "card": {
+        "cardId": "3456-7890-1234-5678",
+        "cvv": "789",
+        "customerId": 3
+      }
+    },
+    {
+      "orderId": 4,
+      "orderValueBeforeDiscount": 75.25,
+      "customer": {
+        "customerId": 4
+      },
+      "deliveryAddress": {
+        "addressId": "104"
+      },
+      "card": {
+        "cardId": "4567-8901-2345-6789",
+        "cvv": "012",
+        "customerId": 4
+      }
+    },
+    {
+      "orderId": 5,
+      "orderValueBeforeDiscount": 300.5,
+      "customer": {
+        "customerId": 5
+      },
+      "deliveryAddress": {
+        "addressId": "105"
+      },
+      "card": {
+        "cardId": "5678-9012-3456-7890",
+        "cvv": "345",
+        "customerId": 5
+      }
+    },
+    {
+      "orderId": 6,
+      "orderValueBeforeDiscount": 120.99,
+      "customer": {
+        "customerId": 6
+      },
+      "deliveryAddress": {
+        "addressId": "106"
+      },
+      "card": {
+        "cardId": "6789-0123-4567-8901",
+        "cvv": "678",
+        "customerId": 6
+      }
+    },
+    {
+      "orderId": 7,
+      "orderValueBeforeDiscount": 89.95,
+      "customer": {
+        "customerId": 7
+      },
+      "deliveryAddress": {
+        "addressId": "107"
+      },
+      "card": {
+        "cardId": "7890-1234-5678-9012",
+        "cvv": "901",
+        "customerId": 7
+      }
+    },
+    {
+      "orderId": 8,
+      "orderValueBeforeDiscount": 250.0,
+      "customer": {
+        "customerId": 8
+      },
+      "deliveryAddress": {
+        "addressId": "108"
+      },
+      "card": {
+        "cardId": "8901-2345-6789-0123",
+        "cvv": "234",
+        "customerId": 8
+      }
+    },
+    {
+      "orderId": 9,
+      "orderValueBeforeDiscount": 60.75,
+      "customer": {
+        "customerId": 9
+      },
+      "deliveryAddress": {
+        "addressId": "109"
+      },
+      "card": {
+        "cardId": "9012-3456-7890-1234",
+        "cvv": "567",
+        "customerId": 9
+      }
+    },
+    {
+      "orderId": 10,
+      "orderValueBeforeDiscount": 180.4,
+      "customer": {
+        "customerId": 10
+      },
+      "deliveryAddress": {
+        "addressId": "110"
+      },
+      "card": {
+        "cardId": "0123-4567-8901-2345",
+        "cvv": "890",
+        "customerId": 10
+      }
+    }
+  ]
+}

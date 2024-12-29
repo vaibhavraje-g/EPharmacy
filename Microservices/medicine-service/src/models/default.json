@@ -1,0 +1,264 @@
+{
+  "medicines": [
+    {
+      "medicineId": 1,
+      "medicineName": "Paracetamol",
+      "manufacturer": "ABC Pharma",
+      "category": "Allopathy",
+      "manufacturingDate": "2023-01-01",
+      "expiryDate": "2025-01-01",
+      "price": 50,
+      "stock": 100
+    },
+    {
+      "medicineId": 2,
+      "medicineName": "Aspirin",
+      "manufacturer": "XYZ Ltd",
+      "category": "Allopathy",
+      "manufacturingDate": "2022-11-10",
+      "expiryDate": "2024-11-10",
+      "price": 60,
+      "stock": 120
+    },
+    {
+      "medicineId": 3,
+      "medicineName": "Amoxicillin",
+      "manufacturer": "ABC Pharma",
+      "category": "Allopathy",
+      "manufacturingDate": "2023-03-15",
+      "expiryDate": "2025-03-15",
+      "price": 120,
+      "stock": 150
+    },
+    {
+      "medicineId": 4,
+      "medicineName": "Metformin",
+      "manufacturer": "PharmaCorp",
+      "category": "Diabetes",
+      "manufacturingDate": "2021-07-20",
+      "expiryDate": "2023-07-20",
+      "price": 200,
+      "stock": 200
+    },
+    {
+      "medicineId": 5,
+      "medicineName": "Insulin",
+      "manufacturer": "XYZ Ltd",
+      "category": "Diabetes",
+      "manufacturingDate": "2023-01-25",
+      "expiryDate": "2025-01-25",
+      "price": 500,
+      "stock": 80
+    },
+    {
+      "medicineId": 6,
+      "medicineName": "Cetirizine",
+      "manufacturer": "MediHealth",
+      "category": "Allopathy",
+      "manufacturingDate": "2022-08-10",
+      "expiryDate": "2024-08-10",
+      "price": 80,
+      "stock": 60
+    },
+    {
+      "medicineId": 7,
+      "medicineName": "Loratadine",
+      "manufacturer": "MediHealth",
+      "category": "Allopathy",
+      "manufacturingDate": "2021-06-25",
+      "expiryDate": "2023-06-25",
+      "price": 90,
+      "stock": 110
+    },
+    {
+      "medicineId": 8,
+      "medicineName": "Dextromethorphan",
+      "manufacturer": "FluMedic",
+      "category": "Covid Essentials",
+      "manufacturingDate": "2023-04-10",
+      "expiryDate": "2025-04-10",
+      "price": 150,
+      "stock": 90
+    },
+    {
+      "medicineId": 9,
+      "medicineName": "Diphenhydramine",
+      "manufacturer": "FluMedic",
+      "category": "Covid Essentials",
+      "manufacturingDate": "2022-11-01",
+      "expiryDate": "2024-11-01",
+      "price": 180,
+      "stock": 130
+    },
+    {
+      "medicineId": 10,
+      "medicineName": "Ibuprofen",
+      "manufacturer": "PainRelief Co.",
+      "category": "Allopathy",
+      "manufacturingDate": "2023-02-20",
+      "expiryDate": "2025-02-20",
+      "price": 70,
+      "stock": 140
+    },
+    {
+      "medicineId": 11,
+      "medicineName": "Vitamin C",
+      "manufacturer": "HealthPlus",
+      "category": "Fitness",
+      "manufacturingDate": "2023-05-10",
+      "expiryDate": "2025-05-10",
+      "price": 30,
+      "stock": 300
+    },
+    {
+      "medicineId": 12,
+      "medicineName": "Magnesium",
+      "manufacturer": "MediPlus",
+      "category": "Fitness",
+      "manufacturingDate": "2023-06-15",
+      "expiryDate": "2025-06-15",
+      "price": 40,
+      "stock": 250
+    },
+    {
+      "medicineId": 13,
+      "medicineName": "Omega-3",
+      "manufacturer": "HealthPlus",
+      "category": "Fitness",
+      "manufacturingDate": "2023-04-10",
+      "expiryDate": "2025-04-10",
+      "price": 90,
+      "stock": 180
+    },
+    {
+      "medicineId": 14,
+      "medicineName": "Ginseng",
+      "manufacturer": "Herbal Inc.",
+      "category": "Ayush",
+      "manufacturingDate": "2022-12-05",
+      "expiryDate": "2024-12-05",
+      "price": 130,
+      "stock": 75
+    },
+    {
+      "medicineId": 15,
+      "medicineName": "Echinacea",
+      "manufacturer": "Herbal Inc.",
+      "category": "Ayush",
+      "manufacturingDate": "2023-07-01",
+      "expiryDate": "2025-07-01",
+      "price": 100,
+      "stock": 100
+    },
+    {
+      "medicineId": 16,
+      "medicineName": "Turmeric",
+      "manufacturer": "NatureMedic",
+      "category": "Ayush",
+      "manufacturingDate": "2023-03-15",
+      "expiryDate": "2025-03-15",
+      "price": 60,
+      "stock": 120
+    },
+    {
+      "medicineId": 17,
+      "medicineName": "Probiotic",
+      "manufacturer": "GutHealth",
+      "category": "Ayush",
+      "manufacturingDate": "2022-09-20",
+      "expiryDate": "2024-09-20",
+      "price": 110,
+      "stock": 95
+    },
+    {
+      "medicineId": 18,
+      "medicineName": "Allergy Relief",
+      "manufacturer": "AllerCare",
+      "category": "Allopathy",
+      "manufacturingDate": "2023-01-15",
+      "expiryDate": "2025-01-15",
+      "price": 85,
+      "stock": 85
+    },
+    {
+      "medicineId": 19,
+      "medicineName": "FluRelief",
+      "manufacturer": "FluCare",
+      "category": "Covid Essentials",
+      "manufacturingDate": "2023-02-05",
+      "expiryDate": "2025-02-05",
+      "price": 150,
+      "stock": 110
+    },
+    {
+      "medicineId": 20,
+      "medicineName": "Lisinopril",
+      "manufacturer": "CardioPlus",
+      "category": "Allopathy",
+      "manufacturingDate": "2022-07-01",
+      "expiryDate": "2024-07-01",
+      "price": 250,
+      "stock": 50
+    },
+    {
+      "medicineId": 21,
+      "medicineName": "Amlodipine",
+      "manufacturer": "CardioPlus",
+      "category": "Allopathy",
+      "manufacturingDate": "2023-01-10",
+      "expiryDate": "2025-01-10",
+      "price": 220,
+      "stock": 130
+    },
+    {
+      "medicineId": 22,
+      "medicineName": "Enalapril",
+      "manufacturer": "CardioPlus",
+      "category": "Allopathy",
+      "manufacturingDate": "2023-03-01",
+      "expiryDate": "2025-03-01",
+      "price": 180,
+      "stock": 120
+    },
+    {
+      "medicineId": 23,
+      "medicineName": "Zinc",
+      "manufacturer": "HealthPlus",
+      "category": "Fitness",
+      "manufacturingDate": "2023-04-15",
+      "expiryDate": "2025-04-15",
+      "price": 35,
+      "stock": 230
+    },
+    {
+      "medicineId": 24,
+      "medicineName": "Vitamin D3",
+      "manufacturer": "SunVita",
+      "category": "Fitness",
+      "manufacturingDate": "2023-06-10",
+      "expiryDate": "2025-06-10",
+      "price": 50,
+      "stock": 190
+    },
+    {
+      "medicineId": 25,
+      "medicineName": "Cough Syrup",
+      "manufacturer": "CoughCare",
+      "category": "Covid Essentials",
+      "manufacturingDate": "2023-01-05",
+      "expiryDate": "2025-01-05",
+      "price": 120,
+      "stock": 140
+    },
+    {
+      "medicineId": 26,
+      "medicineName": "Antacid",
+      "manufacturer": "StomachCare",
+      "category": "Allopathy",
+      "manufacturingDate": "2023-02-20",
+      "expiryDate": "2025-02-20",
+      "price": 50,
+      "stock": 160
+    }
+  ]
+}
