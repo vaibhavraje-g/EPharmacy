@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router'; 
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +22,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PersonalDetailsComponent } from './components/register/personal-details/personal-details.component';
 import { AddressDetailsComponent } from './components/register/address-details/address-details.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +32,7 @@ import { AddressDetailsComponent } from './components/register/address-details/a
     PlaceOrderComponent,
     NavbarComponent,
     PersonalDetailsComponent,
-    AddressDetailsComponent
+    AddressDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,8 +47,9 @@ import { AddressDetailsComponent } from './components/register/address-details/a
     MatBadgeModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
