@@ -31,23 +31,18 @@
 
       <!-- User Profile and Logout Dropdown -->
       <li class="nav-item dropdown">
-        <button class="btn dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn dropdown-toggle" style="background-color: #28a745" [matMenuTriggerFor]="menu">
           <span>Welcome, {{ loggedInPerson | titlecase }}</span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-            <a class="dropdown-item" routerLink="customerDetails" routerLinkActive="active">My Profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" routerLink="viewOrder" routerLinkActive="active">My Orders</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" (click)="logout()">Logout</a>
-          </li>
-        </ul>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <a routerLink="customerDetails" routerLinkActive="active" class="nav-link">My Profile</a>
+          </button>
+          <button mat-menu-item>
+            <a routerLink="viewOrder" routerLinkActive="active" class="nav-link">My Orders</a>
+          </button>
+          <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
       </li>
     </ul>
   </div>
