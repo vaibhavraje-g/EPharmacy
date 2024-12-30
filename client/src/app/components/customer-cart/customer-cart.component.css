@@ -1,0 +1,83 @@
+
+
+
+.cart-items-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cart-item-row {
+    display: flex;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+  
+  .image-box img {
+    width: 80px;  /* Reduced image size */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .medicine-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .in-stock-tag {
+    color: green;
+    font-size: 14px;
+  }
+  
+  .medicine-info {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .cart-item-quantity {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-item-quantity .btn {
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+  }
+  
+  .cart-item-quantity .quantity {
+    font-size: 16px;
+    margin: 0 8px;
+  }
+  
+  .price {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .btn-danger {
+    background-color: red;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .btn-danger:hover {
+    background-color: darkred;
+  }
+  
+  .mt-3 {
+    margin-top: 15px;
+  }
+  
+  .alert-danger {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  

@@ -1,0 +1,159 @@
+/* General Styles */
+.search-bar-container {
+    padding: 10px;
+  }
+  
+  
+  
+  /* Card and Hover Effects */
+  .medicine-card-container {
+    padding: 2px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .card {
+    border-radius: 15px;
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .card-header {
+    padding: 8px;
+    background-color: #28a745;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .card-body {
+    padding: 8px;
+  }
+  
+  .card-footer {
+    padding: 8px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  /* Pagination buttons container */
+  .pagination-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+  }
+  
+  /* Left-aligned button */
+  .left-button {
+    flex: 1;
+    text-align: left;
+  }
+  
+  /* Right-aligned button */
+  .right-button {
+    flex: 1;
+    text-align: right;
+  }
+  
+  
+  /* Style for the Medicine Detail Card */
+  .medicine-detail-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  /* Image Column */
+  .medicine-detail-card .image-box {
+    flex: 1;
+    max-width: 100%;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .medicine-detail-card .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Information Column */
+  .medicine-detail-card .col-md-5 {
+    flex: 2;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .medicine-detail-card .medicine-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .medicine-detail-card .medicine-info {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  
+  .medicine-detail-card .in-stock-tag {
+    background-color: #28a745;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  
+  /* Price Column */
+  .medicine-detail-card .col-md-3 {
+    flex: 1;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .medicine-detail-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1c7632;
+    margin-top: 15px;
+  }
+  
+  .medicine-detail-card .text-muted {
+    font-size: 0.9rem;
+    text-decoration: line-through;
+  }
+  
+  .medicine-detail-card .text-success {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  /* Mobile responsive styling */
+  @media (max-width: 992px) {
+    .medicine-detail-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .medicine-detail-card .col-md-4,
+    .medicine-detail-card .col-md-5,
+    .medicine-detail-card .col-md-3 {
+      max-width: 100%;
+    }
+  
+    .medicine-detail-card .medicine-name {
+      font-size: 1.1rem;
+    }
+  
+    .medicine-detail-card .price {
+      font-size: 1.1rem;
+    }
+  }
+  

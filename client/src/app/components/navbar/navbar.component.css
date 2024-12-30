@@ -1,0 +1,74 @@
+/* Basic Navbar Styles */
+.navbar {
+    min-height: 55px;
+      width: 100%;
+      padding: 10px;
+      margin: 0;
+    }
+    
+    .navbar-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+    
+    .navbar-toggler-icon {
+      background-color: white;
+    }
+    
+    /* Material icon styling */
+    .material-icons {
+      display: inline-flex;
+      vertical-align: top;
+    }
+    
+    /* Navbar item styling for badge (cart item count) */
+    .mat-badge-content {
+      font-size: 12px;
+      color: white;
+    }
+    
+    /* Custom dropdown button for user profile */
+    .nav-item.dropdown .btn {
+      background-color: #28a745;
+      color: white;
+    }
+    
+    /* Hover and active link styles */
+    .nav-link {
+      font-weight: 500;
+      padding-right: 15px; /* Space between links */
+    }
+    
+    /* Align navbar items to the right */
+    .navbar-nav.ml-auto {
+      margin-left: auto;
+    }
+    
+    /* Styling for guest links (Sign In and Sign Up) */
+    .navbar-nav.ml-auto .nav-item {
+      margin-left: 15px; /* Space between Sign In and Sign Up options */
+    }
+    
+    /* Ensure that the navbar and body fill the screen properly */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Prevent unwanted large white area (padding/margin issues) */
+    html, body {
+      height: 100%;
+    }
+    
+    .navbar-collapse {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    /* Ensure proper collapse functionality and prevent layout overflow */
+    .navbar-nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-left: auto;
+    }

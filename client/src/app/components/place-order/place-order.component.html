@@ -1,0 +1,237 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <p class="text-center font-weight-bold h3">Place Order</p>
+        <div class="card">
+          <mat-horizontal-stepper [selectedIndex]="currentStep">
+            <!-- Delivery Address Step -->
+            <mat-step [editable]="false">
+              <ng-template matStepLabel>Delivery Address</ng-template>
+              <h4 class="text-center">Select Address for Delivery</h4>
+  
+              <!-- User addresses -->
+              <div *ngIf="userAddresses.length > 0; else noAddresses" class="list-group">
+                <div
+                  *ngFor="let address of userAddresses | slice : 0 : 3"
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <div>
+                    <h5 class="mb-1">{{ address.addressName }}</h5>
+                    <p class="mb-1">
+                      {{ address.addressLine1 }}
+                      {{ address.addressLine2 ? ', ' + address.addressLine2 : '' }}
+                      <br>
+                      {{ address.area }}, {{ address.city }}, 
+                      {{ address.state }} - {{ address.pincode }}
+                    </p>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="selectedAddress"
+                      [value]="address"
+                      (change)="selectAddress(address)"
+                      [checked]="selectedAddress === address"
+                    />
+                  </div>
+                </div>
+              </div>
+  
+              <!-- No addresses available message -->
+              <ng-template #noAddresses>
+                <div class="alert alert-warning text-center">
+                  No addresses available. Please add a new address.
+                </div>
+              </ng-template>
+  
+              <!-- Button to add a new address -->
+              <div class="text-center mt-3">
+                <button
+                  class="btn btn-outline-success"
+                  (click)="addNewAddress()"
+                >
+                  Add New Address
+                </button>
+              </div>
+  
+              <!-- Step Navigation Buttons -->
+              <div class="d-flex justify-content-end mt-3">
+                <button
+                  class="btn btn-primary"
+                  (click)="nextStep()"
+                  [disabled]="!selectedAddress"
+                >
+                  Next
+                </button>
+              </div>
+            </mat-step>
+  
+            <!-- Payment Step -->
+            <mat-step [editable]="false">
+              <ng-template matStepLabel>Payment</ng-template>
+  
+              <!-- Billing Details -->
+              <div class="list-group mb-3">
+                <div class="list-group-item d-flex justify-content-between">
+                  <span>Item(s) Subtotal:</span>
+                  <span>{{ originalPrice | currency : "INR" }}</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between">
+                  <span>Discount:</span>
+                  <span>{{ discountPercentage }}%</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between">
+                  <span>Health Coins Used:</span>
+                  <span>{{ healthCoinsUsed }}</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between">
+                  <span>Total:</span>
+                  <span>{{ discountedTotal | currency : "INR" }}</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between">
+                  <span>Amount to be Paid:</span>
+                  <span>{{ finalTotal | currency : "INR" }}</span>
+                </div>
+              </div>
+  
+              <!-- User Cards -->
+              <div *ngIf="cards.length > 0; else noCards">
+                <h5 class="mb-3">Select Payment Method</h5>
+                <div class="list-group">
+                  <div
+                    *ngFor="let card of cards"
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="mb-1">
+                        <strong>XXXX-XXXX-XXXX-{{ card.cardId.slice(-4) }}</strong>
+                      </h6>
+                      <p class="mb-1">
+                        {{ card.cardType }} | 
+                        Valid Through: {{ card.expiryDate | date: 'dd/MM/yyyy' }}
+                      </p>
+                      <small>{{ card.nameOnCard }}</small>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        name="selectedCard"
+                        [value]="card"
+                        (change)="selectCard(card)"
+                        [checked]="selectedCard === card"
+                      />
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- CVV Input - Appears only when a card is selected -->
+                <div 
+                  *ngIf="selectedCard" 
+                  class="card mt-3 p-3 bg-light"
+                >
+                  <div class="form-group">
+                    <label for="cvv" class="form-label">
+                      CVV for {{ selectedCard.cardType }} Card
+                    </label>
+                    <input
+                      type="password"
+                      id="cvv"
+                      class="form-control"
+                      [(ngModel)]="cvv"
+                      maxlength="3"
+                      placeholder="Enter 3-digit CVV"
+                      pattern="\d{3}"
+                      required
+                    />
+                    <small class="form-text text-muted">
+                      CVV is the 3-digit security code on the back of your card
+                    </small>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Messaging Area -->
+              <div class="mt-3">
+                <div *ngIf="successMessage" class="alert alert-success">
+                  {{ successMessage }}
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger">
+                  {{ errorMessage }}
+                </div>
+              </div>
+  
+              <!-- No Cards Available Message -->
+              <ng-template #noCards>
+                <div class="alert alert-warning text-center">
+                  No cards available. Please add a new card.
+                </div>
+              </ng-template>
+  
+              <!-- Action Buttons -->
+              <div class="d-flex justify-content-between mt-3">
+                <button
+                  class="btn btn-outline-secondary"
+                  (click)="prevStep()"
+                >
+                  Back
+                </button>
+                <div>
+                  <button
+                    class="btn btn-outline-success me-2"
+                    (click)="addNewCard()"
+                  >
+                    Add Card
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    (click)="placeOrder()"
+                    [disabled]="!selectedCard || !cvv"
+                  >
+                    Pay Now
+                  </button>
+                </div>
+              </div>
+            </mat-step>
+  
+            <!-- Order Summary Step -->
+            <mat-step [editable]="false">
+              <ng-template matStepLabel>Order Summary</ng-template>
+              <h4 class="text-center mb-4">Order Summary</h4>
+              
+              <div class="list-group">
+                <div
+                  *ngFor="let item of cartItems"
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <div>
+                    <h6 class="mb-1">{{ item.medicineName }}</h6>
+                    <small>Qty: {{ item.quantity }}</small>
+                  </div>
+                  <span class="text-success">
+                    {{ item.price * item.quantity | currency : "INR" }}
+                  </span>
+                </div>
+              </div>
+  
+              <div class="text-center mt-4">
+                <h5>
+                  <strong>Total: {{ discountedTotal | currency : "INR" }}</strong>
+                </h5>
+              </div>
+  
+              <!-- Step Navigation Buttons -->
+              <div class="d-flex justify-content-between mt-3">
+                <button
+                  class="btn btn-outline-secondary"
+                  (click)="prevStep()"
+                >
+                  Back
+                </button>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </div>
+      </div>
+    </div>
+  </div>
+  

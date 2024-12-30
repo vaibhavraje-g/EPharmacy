@@ -1,0 +1,40 @@
+
+/* Adjust the margins for the container */
+.container {
+    margin-top: 50px;
+  }
+  
+  /* Card styling for the stepper */
+  .card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Spacing for the step labels */
+  .mat-horizontal-stepper {
+    margin-bottom: 30px;
+  }
+  
+  .mat-step-header {
+    font-weight: bold;
+  }
+  
+  .mat-step-header-active {
+    color: #007bff;
+  }
+  
+  /* Custom success and error messages */
+  .text-success {
+    color: #28a745;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+  }
+  
+  .total-amount {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

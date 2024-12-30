@@ -1,0 +1,105 @@
+
+
+
+<div class="cart-items-container">
+    <!-- Top Bar with Remove All and Subtotal -->
+    <div class="row mb-3">
+      <div class="col-4">
+        <button
+          class="btn btn-outline-danger"
+          (click)="deleteAllMedicinesFromCart()"
+        >
+          Remove All Items
+        </button>
+      </div>
+      <div class="col-4 text-center">
+        <!-- Display success or error messages -->
+        <div *ngIf="successMessage" class="text-success">
+          <strong>{{ successMessage }}</strong>
+        </div>
+        <div *ngIf="successItemMessage" class="text-success">
+          <strong>{{ successItemMessage }}</strong>
+        </div>
+        <div *ngIf="errorMessage" class="text-danger">
+          <strong>{{ errorMessage }}</strong>
+        </div>
+      </div>
+      <div class="col-4 text-end">
+        <h4 class="text-success">
+          Subtotal: {{ getTotalAmount() | currency : "INR" }}
+        </h4>
+      </div>
+    </div>
+  
+    <!-- Loop through cart items to display each item -->
+    <div *ngFor="let item of cartItems" class="row cart-item-row">
+      <div class="col-md-4 image-box">
+        <img src="../../assets/medicine.png" alt="Not Found" class="img-fluid" />
+      </div>
+  
+      <div class="col-md-5">
+        <p class="medicine-name">{{ item.medicineName }}</p>
+        <strong *ngIf="item.stock > 0; else outOfStock" class="in-stock-tag">
+          In Stock
+        </strong>
+        <ng-template #outOfStock>
+          <span class="text-danger"><strong>Out of Stock</strong></span>
+        </ng-template>
+  
+        <div class="medicine-info">
+          <strong>Category:</strong> {{ item.category }} <br />
+          <strong>Manufacturer:</strong> {{ item.manufacturer }} <br />
+          <strong>Manufacturing Date:</strong>
+          {{ item.manufacturingDate | date }} <br />
+          <strong>Expiry Date:</strong> {{ item.expiryDate | date }}
+        </div>
+  
+        <div class="cart-item-quantity">
+          <button
+            class="btn btn-quantity"
+            (click)="updateQuantity('decrease', item)"
+          >
+            -
+          </button>
+          <span class="quantity">{{ item.quantity }}</span>
+          <button
+            class="btn btn-quantity"
+            (click)="updateQuantity('increase', item)"
+          >
+            +
+          </button>
+        </div>
+      </div>
+  
+      <div class="col-md-3 price-box">
+        <p class="price text-success">{{ item.price | currency : "INR" }}</p>
+        <button
+          class="btn btn-danger btn-delete"
+          (click)="deleteMedicineFromCart(item)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Empty Cart Message -->
+    <div *ngIf="!cartItems || cartItems.length === 0" class="row">
+      <div class="col-12">
+        <div class="alert alert-danger text-center p-4 my-3">
+          Your cart is empty!
+        </div>
+      </div>
+    </div>
+  
+    <!-- Place Order Button -->
+    <div *ngIf="cartItems && cartItems.length > 0" class="col-12 text-end">
+      <button class="btn btn-outline-success btn-lg" (click)="placeOrder()">
+        Place Order
+      </button>
+    </div>
+  </div>
+  

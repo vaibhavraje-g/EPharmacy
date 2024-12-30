@@ -1,0 +1,87 @@
+/* Full page height for login section */
+.vh-100 {
+    height: 100vh;
+    margin-top: 20px;
+  }
+  
+  /* Card container for login form */
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.95;
+  }
+  
+  /* Header for card with background and text color */
+  .card-header {
+    background-color: #218838;
+    color: white;
+    padding: 20px;
+    font-size: 1.25rem;
+  }
+  
+  /* Main form section with padding and spacing */
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Styling the form inputs */
+  .form-outline input.form-control-lg {
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  
+  /* Divider line */
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+  }
+  
+  .divider:before,
+  .divider:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 8px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .btn-link:hover {
+    color: #0056b3;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 450px) {
+    .h-custom {
+      height: 100%;
+    }
+  
+    .card-body {
+      padding: 15px;
+    }
+  
+    .btn-primary {
+      width: 100%;
+    }
+  }
+  

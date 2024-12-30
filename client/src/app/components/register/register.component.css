@@ -1,0 +1,90 @@
+/* Full-width container */
+.container {
+    width: 95%; /* Increased width */
+    max-width: 900px; /* Increased maximum width */
+    margin: 0 auto; /* Center align */
+    padding: 20px;
+  }
+  
+  /* Vertical spacing for rows */
+  .row {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+  
+  /* Card header */
+  .card-header {
+    background-color:  #218838; /* Darker green */
+    color: white;
+    padding: 15px;
+    font-size: 1.25rem; /* Slightly smaller font size */
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  /* Form group styles */
+  .form-group {
+    margin-top: 20px;
+  }
+  
+  .input-group {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 8px; /* Slightly smaller padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input fields */
+  input.form-control, select.form-control {
+    border-radius: 8px;
+    padding: 8px; /* Slightly smaller padding */
+    font-size: 0.875rem; /* Slightly smaller font size */
+  }
+  
+  /* Error messages */
+  .text-danger {
+    color: red;
+    font-size: 0.75rem; /* Slightly smaller font size */
+  }
+  
+  /* Button styles */
+  .btn {
+    background-color: #218838; /* Green color */
+    color: white;
+    border-radius: 8px;
+    font-size: 0.875rem; /* Slightly smaller font size */
+    padding: 10px; /* Slightly smaller padding */
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #1a6e2f; /* Darker green on hover */
+  }
+  
+  .set {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px; /* Slightly smaller font size */
+    font-weight: 300;
+  }
+  
+  /* Horizontal stepper */
+  mat-horizontal-stepper {
+    margin-top: 20px;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .col-md-6 {
+      max-width: 100%;
+      min-width: 60%;
+    }
+    .input-group {
+      padding: 6px; /* Slightly smaller padding */
+    }
+    .form-group {
+      margin-top: 10px;
+    }
+  }
+  

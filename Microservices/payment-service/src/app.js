@@ -30,7 +30,7 @@ app.use(requestLogger);
 app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 // Routes
-app.use("/payments-api", routes);
+app.use("/payment-api", routes);
 app.use(errorLogger);
 
 // Error handler middleware

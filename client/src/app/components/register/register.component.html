@@ -1,0 +1,390 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        <div class="card">
+          <div class="card-header text-center">
+            <b>Provide your details</b>
+          </div>
+          <mat-horizontal-stepper #stepper style="width: 100%">
+            <!-- Step 1: Personal Details -->
+            <mat-step [stepControl]="registerForm">
+              <ng-template matStepLabel>Sign Up</ng-template>
+              <form [formGroup]="registerForm" class="form">
+                <!-- Full Name -->
+                <div class="form-group">
+                  <mat-label>Full Name</mat-label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="material-icons">account_circle</span>
+                    </div>
+                    <input
+                      type="text"
+                      formControlName="fullName"
+                      id="fullName"
+                      class="form-control"
+                      placeholder="Enter full name"
+                    />
+                  </div>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      registerForm.controls['fullName'].invalid &&
+                      registerForm.controls['fullName'].touched
+                    "
+                  >
+                    Name should only contain alphabets with a single space between
+                    words.
+                  </div>
+                </div>
+  
+                <!-- Email -->
+                <div class="form-group">
+                  <mat-label>Email</mat-label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="material-icons">email</span>
+                    </div>
+                    <input
+                      type="email"
+                      formControlName="email"
+                      id="email"
+                      class="form-control"
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      registerForm.controls['email'].invalid &&
+                      registerForm.controls['email'].touched
+                    "
+                  >
+                    Please enter a valid email address (with .com or .in).
+                  </div>
+                </div>
+  
+                <!-- Gender -->
+                <div class="form-group">
+                  <mat-label>Gender</mat-label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="material-icons">wc</span>
+                    </div>
+                    <select formControlName="gender" class="form-control">
+                      <option value="" disabled>Select gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      registerForm.controls['gender'].invalid &&
+                      registerForm.controls['gender'].touched
+                    "
+                  >
+                    Gender is required.
+                  </div>
+                </div>
+  
+                <!-- Date of Birth -->
+                <div class="form-group">
+                  <mat-label>Date of Birth</mat-label>
+                  <div class="input-group">
+                    <input
+                      type="date"
+                      formControlName="dob"
+                      class="form-control"
+                    />
+                  </div>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      registerForm.controls['dob'].hasError('ageInvalid') &&
+                      registerForm.controls['dob'].touched
+                    "
+                  >
+                    Date of birth cannot be a future date.
+                  </div>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      registerForm.controls['dob'].hasError('ageBelow18') &&
+                      registerForm.controls['dob'].touched
+                    "
+                  >
+                    You must be 18 years or older to register.
+                  </div>
+                </div>
+  
+                <!-- Mobile Number -->
+                <div class="form-group">
+                  <mat-label>Mobile Number</mat-label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="material-icons">phone</span>
+                    </div>
+                    <input
+                      type="text"
+                      formControlName="mobile"
+                      id="mobile"
+                      class="form-control"
+                      placeholder="Enter mobile number"
+                    />
+                  </div>
+                  <div
+                    class="text-danger"
+                    *ngIf="
+                      registerForm.controls['mobile'].invalid &&
+                      registerForm.controls['mobile'].touched
+                    "
+                  >
+                    Please enter a valid mobile number starting with 6, 7, 8, or
+                    9.
+                  </div>
+                </div>
+  
+                <!-- Password -->
+                <div class="form-group">
+                  <mat-label>Password</mat-label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="material-icons">lock</span>
+                    </div>
+                    <input
+                      type="password"
+                      formControlName="password"
+                      id="password"
+                      class="form-control"
+                      placeholder="Enter password"
+                    />
+                  </div>
+                </div>
+  
+                <!-- Password Conditions -->
+                <div class="form-group">
+                  <ul class="list-unstyled">
+                    <li
+                      [ngClass]="{
+                        'text-success': passwordValid('uppercase'),
+                        'text-danger': !passwordValid('uppercase')
+                      }"
+                    >
+                      At least one uppercase letter
+                    </li>
+                    <li
+                      [ngClass]="{
+                        'text-success': passwordValid('lowercase'),
+                        'text-danger': !passwordValid('lowercase')
+                      }"
+                    >
+                      At least one lowercase letter
+                    </li>
+                    <li
+                      [ngClass]="{
+                        'text-success': passwordValid('digit'),
+                        'text-danger': !passwordValid('digit')
+                      }"
+                    >
+                      At least one digit
+                    </li>
+                    <li
+                      [ngClass]="{
+                        'text-success': passwordValid('special'),
+                        'text-danger': !passwordValid('special')
+                      }"
+                    >
+                      At least one special character
+                    </li>
+                    <li
+                      [ngClass]="{
+                        'text-success': passwordValid('length'),
+                        'text-danger': !passwordValid('length')
+                      }"
+                    >
+                      Between 7 to 20 characters long
+                    </li>
+                  </ul>
+                </div>
+  
+                <!-- Next Button -->
+                <div class="d-flex justify-content-end">
+                  <button mat-button class="btn" (click)="stepper.next()">
+                    Next
+                  </button>
+                </div>
+              </form>
+            </mat-step>
+  
+            <!-- Step 2: Address Details -->
+            <mat-step [stepControl]="registerForm">
+              <ng-template matStepLabel>Address</ng-template>
+              <form [formGroup]="registerForm" class="form">
+                <!-- Address Name -->
+                <div class="form-group">
+                  <mat-label>Address Name (Home/Work)</mat-label>
+                  <input
+                    type="text"
+                    formControlName="addressName"
+                    class="form-control"
+                    placeholder="Enter address name"
+                  />
+                  <div
+                    *ngIf="
+                      registerForm.get('addressName')?.invalid &&
+                      registerForm.get('addressName')?.touched
+                    "
+                  >
+                    <small class="text-danger">Address name is required</small>
+                  </div>
+                </div>
+  
+                <!-- Address Line 1 -->
+                <div class="form-group">
+                  <mat-label>Address Line 1</mat-label>
+                  <input
+                    type="text"
+                    formControlName="addressLine1"
+                    class="form-control"
+                    placeholder="Enter address line 1"
+                  />
+                  <div
+                    *ngIf="
+                      registerForm.get('addressLine1')?.invalid &&
+                      registerForm.get('addressLine1')?.touched
+                    "
+                  >
+                    <small class="text-danger">Address Line 1 is required</small>
+                  </div>
+                </div>
+  
+                <!-- Address Line 2 -->
+                <div class="form-group">
+                  <mat-label>Address Line 2</mat-label>
+                  <input
+                    type="text"
+                    formControlName="addressLine2"
+                    class="form-control"
+                    placeholder="Enter address line 2"
+                  />
+                  <div
+                    *ngIf="
+                      registerForm.get('addressLine2')?.invalid &&
+                      registerForm.get('addressLine2')?.touched
+                    "
+                  >
+                    <small class="text-danger">Address Line 2 is required</small>
+                  </div>
+                </div>
+  
+                <!-- Area -->
+                <div class="form-group">
+                  <mat-label>Area</mat-label>
+                  <input
+                    type="text"
+                    formControlName="area"
+                    class="form-control"
+                    placeholder="Enter area"
+                  />
+                  <div
+                    *ngIf="
+                      registerForm.get('area')?.invalid &&
+                      registerForm.get('area')?.touched
+                    "
+                  >
+                    <small class="text-danger">Area is required</small>
+                  </div>
+                </div>
+  
+                <!-- City -->
+                <div class="form-group">
+                  <mat-label>City</mat-label>
+                  <input
+                    type="text"
+                    formControlName="city"
+                    class="form-control"
+                    placeholder="Enter city"
+                  />
+                  <div
+                    *ngIf="
+                      registerForm.get('city')?.invalid &&
+                      registerForm.get('city')?.touched
+                    "
+                  >
+                    <small class="text-danger">City is required</small>
+                  </div>
+                </div>
+  
+                <!-- State -->
+                <div class="form-group">
+                  <mat-label>State</mat-label>
+                  <select formControlName="state" class="form-control">
+                    <option value="" disabled>Select state</option>
+                    <option *ngFor="let state of stateList" [value]="state">
+                      {{ state }}
+                    </option>
+                  </select>
+                  <div
+                    *ngIf="
+                      registerForm.get('state')?.invalid &&
+                      registerForm.get('state')?.touched
+                    "
+                  >
+                    <small class="text-danger">State is required</small>
+                  </div>
+                </div>
+  
+                <!-- Pin Code -->
+                <div class="form-group">
+                  <mat-label>Pin Code</mat-label>
+                  <input
+                    type="text"
+                    formControlName="pinCode"
+                    class="form-control"
+                    placeholder="Enter pin code"
+                  />
+                  <div
+                    *ngIf="
+                      registerForm.get('pinCode')?.invalid &&
+                      registerForm.get('pinCode')?.touched
+                    "
+                  >
+                    <small class="text-danger"
+                      >Pin Code is required and must be 6 digits</small
+                    >
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <div class="d-flex justify-content-end">
+                    <button mat-button class="btn" (click)="stepper.next()">
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </mat-step>
+  
+            <!-- Step 3: Submit -->
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <div class="text-center set">We are all set!</div>
+              <div class="d-flex justify-content-center">
+                <button
+                  mat-button
+                  class="btn"
+                  type="submit"
+                  [disabled]="registerForm.pristine"
+                  (click)="registerCustomer()"
+                >
+                  Register
+                </button>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,265 @@
+<div class="row search-bar-container">
+    <div class="col-md-8 offset-md-2" *ngIf="!viewDetails">
+      <div class="input-group mb-3">
+        <input
+          list="medicines"
+          class="form-control rounded-left"
+          placeholder="Search using medicine name.."
+          [(ngModel)]="searchText"
+          (input)="onSearchTextChange()"
+          style="border-right: none"
+        />
+        <button
+          class="btn btn-outline-success text-success bg-white"
+          (click)="search()"
+          type="button"
+          style="z-index: 1"
+        >
+          Search
+        </button>
+        <datalist id="medicines">
+          <option
+            *ngFor="let medicine of filteredMedicines"
+            [value]="medicine"
+          ></option>
+        </datalist>
+      </div>
+  
+      <!-- Category buttons for filtering -->
+      <div class="categories d-flex justify-content-between flex-wrap gap-2">
+        <button
+          *ngFor="
+            let categoryOption of [
+              'Allopathy',
+              'Homeopathy',
+              'Ayush',
+              'Covid Essentials',
+              'Fitness',
+              'Diabetes',
+              'Veterinary',
+              'Mom & Baby'
+            ]
+          "
+          class="btn btn-outline-success btn-sm"
+          (click)="category = categoryOption; categorise()"
+        >
+          {{ categoryOption }}
+        </button>
+      </div>
+    </div>
+  
+    <!-- Sort By Dropdown -->
+    <div class="col-md-2" *ngIf="!viewDetails">
+      <button
+        class="btn btn-outline-success text-success bg-white"
+        [matMenuTriggerFor]="menu"
+      >
+        <span style="font-size: 14px">Sort By</span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="sortLowToHigh()">
+          Price: Low to High
+        </button>
+        <button mat-menu-item (click)="sortHighToLow()">
+          Price: High to Low
+        </button>
+        <button mat-menu-item (click)="sortAtoZ()">Name: A to Z</button>
+        <button mat-menu-item (click)="sortZtoA()">Name: Z to A</button>
+      </mat-menu>
+    </div>
+  </div>
+  
+  <!-- Show all Medicines -->
+  <div class="container">
+    <!-- No medicines available message -->
+    <div *ngIf="medicineListToDisplay.length === 0" class="text-center">
+      <div class="text-danger" style="font-size: 20px">
+        No medicines available for the selected category!
+      </div>
+    </div>
+  
+    <!-- Medicines Display -->
+    <div *ngIf="medicineListToDisplay.length > 0 && !viewDetails">
+      <div class="row justify-content-center">
+        <div class="card-group d-flex justify-content-center">
+          <div
+            *ngFor="let medicine of getMedicineListToDisplay()"
+            class="medicine-card-container"
+          >
+            <div class="card hoverable rounded-lg shadow-card">
+              <!-- Card Header -->
+              <a class="nav-link" (click)="setSelectedMedicine(medicine)">
+                <div class="card-header text-white">
+                  <div class="text-truncate">{{ medicine.medicineName }}</div>
+                </div>
+  
+                <!-- Card Body with Image -->
+                <div class="card-body">
+                  <div class="image-box text-center">
+                    <img
+                      src="../../assets/medicine.png"
+                      class="img-fluid"
+                      alt="{{ medicine.medicineName }} image"
+                    />
+                  </div>
+                </div>
+              </a>
+  
+              <!-- Card Footer with Price and Add to Cart -->
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-8 text-left">
+                    <span class="price-tag">
+                      {{ medicine.price | currency : "INR" }}
+                    </span>
+                    <span
+                      class="text-muted original-price"
+                      style="text-decoration: line-through"
+                    >
+                      {{
+                        (medicine.price * 100) / (100 - medicine.discountPercent)
+                          | currency : "INR"
+                      }}
+                    </span>
+                    <br />
+                    <span class="text-success discount-tag">
+                      GET {{ medicine.discountPercent }}% off
+                    </span>
+                  </div>
+  
+                  <!-- Add to Cart Button -->
+                  <div class="col-4 text-right">
+                    <button
+                      class="btn btn-outline-success btn-sm"
+                      (click)="addToCart(medicine.medicineId)"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Pagination Buttons -->
+      <div
+        class="pagination-buttons-container mt-4 mb-3 d-flex justify-content-between"
+      >
+        <div>
+          <button
+            class="btn btn-outline-success text-success bg-white"
+            [disabled]="startIndex == 0"
+            (click)="onPrevious()"
+          >
+            Previous Page
+          </button>
+        </div>
+        <div>
+          <button
+            class="btn btn-outline-success text-success bg-white"
+            [disabled]="displayLength <= endIndex"
+            (click)="onNext()"
+          >
+            Next Page
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Medicine Details View -->
+    <div class="container" *ngIf="viewDetails">
+      <div class="row">
+        <div class="col-md-2">
+          <button (click)="goBack()" class="btn btn-outline-warning btn-sm">
+            Back
+          </button>
+        </div>
+        <div class="col-md-8 text-center" style="font-size: 20px">
+          <span *ngIf="successMessage" class="text-success">{{
+            successMessage
+          }}</span>
+          <span *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</span>
+        </div>
+      </div>
+  
+      <!-- Medicine Detail Card -->
+      <div class="row medicine-detail-card">
+        <!-- Image Column -->
+        <div class="col-md-4 image-box">
+          <img
+            src="../../assets/medicine.png"
+            class="img-fluid"
+            alt="Not Found"
+          />
+        </div>
+  
+        <!-- Info Column -->
+        <div class="col-md-5">
+          <p class="medicine-name">{{ selectedMedicine.medicineName }}</p>
+          <strong
+            *ngIf="selectedMedicine.stock > 0; else outOfStock"
+            class="in-stock-tag"
+          >
+            In Stock
+          </strong>
+          <ng-template #outOfStock>
+            <span class="text-danger"><strong>Out of Stock</strong></span>
+          </ng-template>
+  
+          <div class="medicine-info">
+            <strong>Category:</strong> {{ selectedMedicine.category }} <br />
+            <strong>Manufacturer:</strong>
+            {{ selectedMedicine.manufacturer }}
+            <br />
+            <strong>Manufacturing Date:</strong>
+            {{ selectedMedicine.manufacturingDate | date }} <br />
+            <strong>Expiry Date:</strong>
+            {{ selectedMedicine.expiryDate | date }}
+            <br />
+          </div>
+  
+          <!-- <div class="cart-item-quantity">
+            <button
+              class="btn btn-quantity"
+              (click)="updateQuantity('decrease', item)"
+            >
+              -
+            </button>
+            <span class="quantity">{{ item.quantity }}</span>
+            <button
+              class="btn btn-quantity"
+              (click)="updateQuantity('increase', item)"
+            >
+              +
+            </button>
+          </div> -->
+  
+          <button
+            class="btn btn-outline-success btn-sm"
+            (click)="addToCart(selectedMedicine.medicineId)"
+          >
+            Add to Cart
+          </button>
+        </div>
+  
+        <!-- Price Column -->
+        <div class="col-md-3">
+          <p class="price">{{ selectedMedicine.price | currency : "INR" }}</p>
+          <p class="text-muted">
+            <span style="text-decoration: line-through">
+              {{
+                (selectedMedicine.price * 100) /
+                  (100 - selectedMedicine.discountPercent) | currency : "INR"
+              }}
+            </span>
+          </p>
+          <p class="text-success">
+            GET {{ selectedMedicine.discountPercent }}% off
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

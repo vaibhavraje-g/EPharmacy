@@ -1,0 +1,52 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <!-- Form Section -->
+          <div class="card">
+            <div class="card-header text-center">
+              <b>Sign in or Sign up</b>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="loginForm" (ngSubmit)="customerLogin()">
+                <div class="divider d-flex align-items-center my-4">
+                  <p class="text-center mx-3 mb-0">
+                    Sign up or Sign in to access your orders, special offers, health tips, and more!
+                  </p>
+                </div>
+  
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" formControlName="emailId" class="form-control form-control-lg" id="emailId" placeholder="Email Address">
+                </div>
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="password" class="form-control form-control-lg" id="password" placeholder="Password">
+                </div>
+  
+                <!-- Sign In Button -->
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button type="submit" class="btn btn-primary btn-lg form-control">Sign in</button>
+                  <div *ngIf="errorMessage" class="text-danger mt-3">
+                    <h4>{{ errorMessage }}</h4>
+                  </div>
+  
+                  <!-- OR divider -->
+                  <div class="divider d-flex align-items-center my-3">
+                    <p class="text-center fw-bold mx-3 mb-0">OR</p>
+                  </div>
+  
+                  <!-- Create Account Button -->
+                  <div class="text-center">
+                    <button class="btn btn-link" (click)="getRegisterPage()">Create New Account</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
