@@ -9,7 +9,6 @@
         "dev": "nodemon src/app.js",
         "swagger-autogen": "node src/swagger.js"
     },
-    
     "author": "Vaibhavraje Gaikwad",
     "license": "ISC",
     "dependencies": {
@@ -17,7 +16,7 @@
         "consul": "^0.40.0",
         "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",
-        "dotenv": "^16.3.1",
+        "dotenv": "^16.4.7",
         "express": "^4.21.1",
         "helmet": "^8.0.0",
         "jsonwebtoken": "^9.0.2",

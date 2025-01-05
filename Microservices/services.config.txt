@@ -9,3 +9,5 @@
 "paymentsDB":"epharmacy_payments"
 
 }
+
+mongodb+srv://Epharmacy_Admin:<db_password>@cluster0.011dm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
